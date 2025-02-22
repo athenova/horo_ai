@@ -5,7 +5,7 @@ import time
 from openai import OpenAI
 from datetime import datetime
 
-AI_TEXT_MODEL = 'gpt-4o-mini'
+AI_TEXT_MODEL = 'chatgpt-4o-latest'
 BOT_TOKEN_NAME = "ATHE_BOT_TOKEN"
 BOT_TOKEN = os.environ.get(BOT_TOKEN_NAME)
 #CHAT_ID = -1002374309134
