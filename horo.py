@@ -32,7 +32,7 @@ if __name__ == '__main__':
     schedule.every().day.at("08:00",'Europe/Moscow').do(job, sign="Рыбы", symbol='♓',CHAT_ID='@pisces_the')
     schedule.every().day.at("08:01",'Europe/Moscow').do(job, sign="Овен", symbol='♈',CHAT_ID='@aries_the')
     schedule.every().day.at("08:02",'Europe/Moscow').do(job, sign="Телец", symbol='♉')
-    schedule.every().day.at("08:03",'Europe/Moscow').do(job, sign="Близнецы", symbol='♊')
+    schedule.every().day.at("08:03",'Europe/Moscow').do(job, sign="Близнецы", symbol='♊', CHAT_ID='@gemini_the')
     schedule.every().day.at("08:04",'Europe/Moscow').do(job, sign="Рак", symbol='♋')
     schedule.every().day.at("08:05",'Europe/Moscow').do(job, sign="Лев", symbol='♌')
     schedule.every().day.at("08:06",'Europe/Moscow').do(job, sign="Дева", symbol='♍')
