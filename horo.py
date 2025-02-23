@@ -30,7 +30,7 @@ def job(sign, symbol,CHAT_ID=CHAT_ID):
 
 if __name__ == '__main__':
     schedule.every().day.at("08:00",'Europe/Moscow').do(job, sign="Рыбы", symbol='♓',CHAT_ID='@pisces_the')
-    schedule.every().day.at("08:01",'Europe/Moscow').do(job, sign="Овен", symbol='♈')
+    schedule.every().day.at("08:01",'Europe/Moscow').do(job, sign="Овен", symbol='♈',CHAT_ID='@aries_the')
     schedule.every().day.at("08:02",'Europe/Moscow').do(job, sign="Телец", symbol='♉')
     schedule.every().day.at("08:03",'Europe/Moscow').do(job, sign="Близнецы", symbol='♊')
     schedule.every().day.at("08:04",'Europe/Moscow').do(job, sign="Рак", symbol='♋')
