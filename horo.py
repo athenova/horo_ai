@@ -5,7 +5,8 @@ import time
 from openai import OpenAI
 from datetime import datetime
 
-AI_TEXT_MODEL = 'chatgpt-4o-latest'
+AI_TEXT_MODEL = 'deepseek-chat'
+CHAT_TOKEN_NAME = "DEEPSEEK_API_KEY"
 BOT_TOKEN_NAME = "ATHE_BOT_TOKEN"
 BOT_TOKEN = os.environ.get(BOT_TOKEN_NAME)
 #CHAT_ID = -1002374309134
@@ -13,19 +14,15 @@ CHAT_ID = '@horo_ai'
 
 def job(sign, symbol,CHAT_ID=CHAT_ID):
     today = datetime.today().strftime('%Y-%m-%d')
-    client = OpenAI()
+    client = OpenAI(api_key=os.environ.get(CHAT_TOKEN_NAME), base_url="https://api.deepseek.com")
     text = client.chat.completions.create(
         model=AI_TEXT_MODEL,
         messages=[
             { "role": "system", "content": f"Ты - профессиональный астролог" },
-            { "role": "user", "content": f"Составь гороскоп на {today} для знака '{sign}', используй смайлики, не пиши дату" },
+            { "role": "user", "content": f"Составь гороскоп на {today} для знака '{sign}', используй смайликии, используй не более 300 слов" },
         ]
     ).choices[0].message.content
     bot = telebot.TeleBot(BOT_TOKEN)
-    text = f"""{symbol} **{sign} {today}** {symbol}
-
-{text}    
-"""
     bot.send_message(chat_id=CHAT_ID, text=text, parse_mode="Markdown")
 
 if __name__ == '__main__':
