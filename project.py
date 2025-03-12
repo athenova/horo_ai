@@ -1,6 +1,7 @@
 from simple_blogger import SimplestBlogger
 from string import Template
 from datetime import datetime
+from datetime import timedelta
 
 class Project(SimplestBlogger):
     def __init__(self, **kwargs):
@@ -26,7 +27,8 @@ class Project(SimplestBlogger):
         }]
     
     def _preprocess_text_prompt(self, prompt):
-        return Template(prompt).substitute(date = datetime.today().strftime('%Y-%m-%d'))
+        tomorrow = datetime.today() +  timedelta(days=1)
+        return Template(prompt).substitute(date = tomorrow.strftime('%Y-%m-%d'))
     
     def _system_prompt(self, _):
         return f"Ты - профессиональный астролог"
