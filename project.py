@@ -34,7 +34,7 @@ class ProjectTelegram(Project):
     def __init__(self, **kwargs):
         super().__init__(            
             reviewer=TelegramSender(),
-            senders=[TelegramSender(channel_id='@horo_ai')]
+            senders=[TelegramSender(channel_id='@horo_ai')],
             **kwargs)
         
 class ProjectVk(Project):
