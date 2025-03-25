@@ -12,7 +12,7 @@ if __name__ == '__main__':
     def job(type, chat_id=None, group_id=None):
         tg.send(type=type, chat_id=chat_id)
         if group_id is not None:
-            vk.send(type=type, group_id=group_id)
+            vk.send(type=type, group_id=group_id, image_gen=False, text_gen=False)
 
     schedule.every().day.at("20:00",'Europe/Moscow').do(job, type="pisces", chat_id='@pisces_the', group_id='229837683')
     schedule.every().day.at("20:01",'Europe/Moscow').do(job, type="aries", chat_id='@aries_the', group_id='229837854')
