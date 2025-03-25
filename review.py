@@ -1,5 +1,5 @@
-from project import Project
+from project import *
 
-p = Project()
+p = ProjectTelegram()
 p.review('pisces')
 #p.send('pisces', chat_id=-1002374309134)
